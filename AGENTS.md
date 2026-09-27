@@ -12,8 +12,9 @@ agents exactly as they do to humans.
   test, docs, chore, perf. Don't batch multiple unrelated changes into one commit, and
   don't sit on committed work without pushing it.
 - **One logical change per commit.** A commit should be revertable on its own.
-- **Commit when green:** change, then targeted tests pass, then typecheck, then lint,
-  then commit. Never commit a failing tree.
+- **Commit when green:** change, then `npm run verify`, then commit. It runs exactly what
+  CI runs, minus the end-to-end smoke test, so green locally means green on push. Never
+  commit a failing tree. If it objects to formatting, `npm run format` rewrites the files.
 - Never use `--no-verify`. A failing hook is a bug to fix, not to skip.
 
 ## Branch and merge
