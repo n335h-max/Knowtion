@@ -75,6 +75,8 @@ export default tseslint.config(
       // .gitignore, so without this every coverage run leaves `npm run lint` failing on
       // the report's own bundled scripts.
       'coverage/**',
+      // The packaged application: hundreds of megabytes of Electron, none of it ours.
+      '**/release/**',
       // Scratch worktrees created by tooling: the same source under a second path, so
       // linting them double-reports every finding. Other .claude content is tracked.
       '.claude/worktrees/**',
