@@ -25,6 +25,10 @@ agents exactly as they do to humans.
 - CI still runs on every push to `main` (typecheck, lint, format, the licence gate,
   tests). It's a safety net, not a merge gate: if it goes red after a push, the very
   next commit should fix or revert it, not leave main broken.
+- **Look at the run.** `npm run verify` passing locally is not evidence that CI passed.
+  CI runs on Linux and macOS as well as Windows, and with coverage; a test that depends
+  on machine speed, path separators or line endings can be green on one machine for days
+  while main is red. Check with `gh run list --workflow=ci.yml --limit 3` after pushing.
 
 ## Release gates
 
