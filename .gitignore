@@ -58,6 +58,19 @@ node_modules/electron/dist/
 # project skills — is deliberately shared and must stay tracked.
 .claude/worktrees/
 
+# Per-machine coding-agent state: granted permissions, local overrides, transcripts and
+# anything else a tool writes about THIS computer. The shared config above is checked in
+# on purpose; these carry absolute home-directory paths and session detail that must not
+# reach a public repository.
+.claude/settings.local.json
+.claude/*.local.json
+.claude/history.jsonl
+.claude/todos/
+CLAUDE.local.md
+.cursor/
+.aider*
+.continue/
+
 # Terminal transcripts saved by tooling into the working directory. They are session
 # logs, not project files, and a `git add -A` sweeps them into a commit unnoticed.
 *-localsave*.txt
