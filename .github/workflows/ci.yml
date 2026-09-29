@@ -28,11 +28,11 @@ jobs:
       # repository is given access to secrets, signing keys or a release channel,
       # every action must be pinned to a full commit SHA. A mutable tag in a
       # privileged workflow is a supply-chain hole; in this unprivileged one it is not.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           cache: npm
 
       - run: npm ci

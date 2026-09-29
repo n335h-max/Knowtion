@@ -7,9 +7,11 @@ rich text, and databases with typed properties and views.
 already own. There is no Knowtion server, no account to create, and no subscription.
 
 > Status: **pre-alpha, and runnable.** Nested pages, the block editor, full-text search,
-> multi-device sync through a shared folder, end-to-end encryption, and databases — eight
+> encrypted sync through a shared folder, end-to-end encryption, and databases — eight
 > property types, table and board views, filter, sort and group, drag ordering — all work
-> today, and a Notion export imports with its databases. See the roadmap below.
+> today, and a Notion export imports with its databases. Syncing is currently limited to
+> workspaces that have already been set up on a device; joining an existing workspace from
+> a second device is not available yet. See the roadmap below.
 >
 > **Platform: Windows.** macOS and Linux are not supported at v1 — see _Platform support_.
 
@@ -73,7 +75,7 @@ Requires Node 24+.
 
     git clone <repo-url>
     cd knowtion
-    npm install
+    npm ci
     npm run verify     # formatting, typecheck, lint, licence gate, tests
     npm run format     # rewrite anything the formatting check objects to
     npm start          # build and launch the desktop app
